@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class getFish : MonoBehaviour
+public class GetFish : InteractableObject
 {
     public Global global;
-    public string objectName = "Object";
+    public string objectName = "fishGet";
 
     public void Interact()
     {
-        Debug.Log("Yes it working");
+        Debug.Log("Yes it fish");
         global.FishCount += 1;
     }
 }

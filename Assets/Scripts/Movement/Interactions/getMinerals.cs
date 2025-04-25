@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class getMinerals: MonoBehaviour
+public class GetMinerals: MonoBehaviour
 {
     public Global global;
     public string objectName = "Object";
 
     public void Interact()
     {
-        Debug.Log("Yes it working");
+        Debug.Log("Yes it mineral");
         global.MineralCount += 1;
     }
 }
