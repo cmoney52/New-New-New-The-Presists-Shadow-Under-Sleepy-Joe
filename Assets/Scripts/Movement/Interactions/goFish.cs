@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class GetFish : InteractableObject
+public class GetFish : MonoBehaviour
 {
     public Global global;
-    public string objectName = "fishGet";
+    public string objectName = "Object";
 
     public void Interact()
     {
