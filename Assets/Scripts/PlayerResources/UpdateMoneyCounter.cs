@@ -30,13 +30,7 @@ public class UpdateMoneyCounter : MonoBehaviour
         rockText.text = global.MineralCount.ToString();
 
         //test
-        Debug.Log("wood" + global.WoodCount);
-        Debug.Log("fish" + global.FishCount);
-        Debug.Log("rock" + global.MineralCount);
     }
 
-    public void  updateMoney()
-    {
-        global.MoneyCount++; 
-    }
+
 }
