@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine.Events;
+using UnityEngine;
 
-namespace Assets.Scripts.Movement.Interactions
+public class IInteractable : MonoBehaviour
 {
-    internal interface IInteractable    
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        public UnityEvent onInteract { get; protected set; }
-        public void Interact();
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
