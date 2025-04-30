@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Global
+  - interactableObject
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - UI
   - Joe
   - Player
-  - interactableLayer
+  - interactableObject
   - 
   - 
   - 

@@ -7,6 +7,9 @@ public class Global : MonoBehaviour
     public float WoodCount = 0f;
     public float FishCount = 0f;
     public float MineralCount = 0f;
+    public float WoodPrice = 1f;
+    public float FishPrice = 2f;
+    public float MineralPrice = 3f;
     void Start()
     {
         
