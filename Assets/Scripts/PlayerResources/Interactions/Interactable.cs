@@ -6,7 +6,7 @@ public class Interactable : MonoBehaviour
 {
     Outline outline;
     public string message;
-    Global global;
+    public Global global;
 
     public UnityEvent onInteraction;
 

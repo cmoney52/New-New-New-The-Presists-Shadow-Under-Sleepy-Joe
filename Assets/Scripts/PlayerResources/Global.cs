@@ -10,6 +10,11 @@ public class Global : MonoBehaviour
     public float WoodPrice = 1f;
     public float FishPrice = 2f;
     public float MineralPrice = 3f;
+
+    public string ReturnString(float converting)
+    {
+        return (converting.ToString());
+    }
     void Start()
     {
         

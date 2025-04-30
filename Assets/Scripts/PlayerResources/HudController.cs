@@ -1,10 +1,12 @@
 using UnityEngine;
 using TMPro;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+using JetBrains.Annotations;
 
 public class HudController : MonoBehaviour
 {
     public static HudController instance;
-    Global global;
+    public Global global;
 
     private void Awake()
     {
@@ -23,9 +25,13 @@ public class HudController : MonoBehaviour
     {
         interactionText.gameObject.SetActive(false);
     }
-
     void Update()
     {
-        counters.text = "$" + global.MoneyCount.ToString() + "/n wood" + global.WoodCount.ToString() + "/n fish" + global.FishCount.ToString() + "/n rocks" + global.MineralCount.ToString();
+        //Updates the text on the screen that shows the amount of money and materials the player has
+        counters.text = 
+            " $" + global.ReturnString(global.MoneyCount) 
+            + "\n Wood:" + global.ReturnString(global.WoodCount) 
+            + "\n Fish:" + global.ReturnString(global.FishCount) 
+            + "\n Rock:" + global.ReturnString(global.MineralCount);
     }
 }
