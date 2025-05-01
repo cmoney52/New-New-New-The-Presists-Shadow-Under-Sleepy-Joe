@@ -32,6 +32,7 @@ public class HudController : MonoBehaviour
             " $" + global.ReturnString(global.MoneyCount) 
             + "\n Wood:" + global.ReturnString(global.WoodCount) 
             + "\n Fish:" + global.ReturnString(global.FishCount) 
-            + "\n Rock:" + global.ReturnString(global.MineralCount);
+            + "\n Rock:" + global.ReturnString(global.MineralCount)
+            + "\n do you have fishing rod?:" + global.hasFishingRod;
     }
 }

@@ -10,14 +10,16 @@ public class Global : MonoBehaviour
     public float WoodPrice = 1f;
     public float FishPrice = 2f;
     public float MineralPrice = 3f;
+    public bool hasFishingRod = false;
 
     public string ReturnString(float converting)
     {
         return (converting.ToString());
     }
+
     void Start()
     {
-        
+        hasFishingRod = false;
     }
 
     // Update is called once per frame
