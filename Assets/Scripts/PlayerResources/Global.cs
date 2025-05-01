@@ -10,6 +10,7 @@ public class Global : MonoBehaviour
     public float WoodPrice = 1f;
     public float FishPrice = 2f;
     public float MineralPrice = 3f;
+    public bool hasFishingRod = false;
 
     public string ReturnString(float converting)
     {
