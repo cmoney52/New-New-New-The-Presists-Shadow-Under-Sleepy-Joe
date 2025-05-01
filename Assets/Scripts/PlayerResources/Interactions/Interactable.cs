@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 public class Interactable : MonoBehaviour
 {
     Outline outline;
     public string message;
     public Global global;
+    [SerializeField] TMP_Text interactionText;
 
     public UnityEvent onInteraction;
 
@@ -42,7 +44,20 @@ public class Interactable : MonoBehaviour
 
     public void getFish()
     {
-        global.FishCount += 1;
+        if (global.hasFishingRod)
+        {
+            //Play animation
+            global.FishCount += 1;
+        }
+    }
+    public void getFishingRod()
+    {
+        if (global.hasFishingRod)
+        {
+            interactionText.gameObject.SetActive(false);
+            interactionText.text = "You Already Have a Fishing Rod";
+        }
+        global.hasFishingRod = true;
     }
 
     public void sell()
