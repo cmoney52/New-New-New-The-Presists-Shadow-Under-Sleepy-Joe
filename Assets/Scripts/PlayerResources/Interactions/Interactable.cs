@@ -54,10 +54,14 @@ public class Interactable : MonoBehaviour
     {
         if (global.hasFishingRod)
         {
-            interactionText.gameObject.SetActive(false);
             interactionText.text = "You Already Have a Fishing Rod";
+            return;
         }
-        global.hasFishingRod = true;
+        else
+        {
+
+            global.hasFishingRod = true;
+        }
     }
 
     public void sell()

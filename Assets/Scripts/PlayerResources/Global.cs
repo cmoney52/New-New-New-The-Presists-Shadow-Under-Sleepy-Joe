@@ -16,9 +16,10 @@ public class Global : MonoBehaviour
     {
         return (converting.ToString());
     }
+
     void Start()
     {
-        
+        hasFishingRod = false;
     }
 
     // Update is called once per frame

@@ -348,7 +348,7 @@ Transform:
   m_GameObject: {fileID: 158443788}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 93.62, y: 4.57, z: 57.96}
+  m_LocalPosition: {x: 93.62, y: -7.39, z: 57.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: Collect Fishing Rod
   global: {fileID: 909023060}
-  interactionText: {fileID: 0}
+  interactionText: {fileID: 1207576793}
   onInteraction:
     m_PersistentCalls:
       m_Calls:
@@ -3380,7 +3380,7 @@ Transform:
   m_GameObject: {fileID: 1380084462}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 105.08, y: 5.05, z: 49.65}
+  m_LocalPosition: {x: 105.08, y: -7.39, z: 49.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
