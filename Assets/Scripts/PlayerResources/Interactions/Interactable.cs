@@ -2,10 +2,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using BlockadeLabsSDK;
 
 public class Interactable : MonoBehaviour
 {
     Outline outline;
+    public GameObject fishingRod;
     public string message;
     public Global global;
     [SerializeField] TMP_Text interactionText;
@@ -52,16 +54,9 @@ public class Interactable : MonoBehaviour
     }
     public void getFishingRod()
     {
-        if (global.hasFishingRod)
-        {
-            DisableOutline();
-            interactionText.text = " ";
-        }
-        else
-        {
-
-            global.hasFishingRod = true;
-        }
+        fishingRod.tag = "disabled";
+        global.hasFishingRod = true;
+        
     }
 
     public void sell()
