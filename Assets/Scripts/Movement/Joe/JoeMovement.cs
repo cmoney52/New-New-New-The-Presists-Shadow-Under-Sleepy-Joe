@@ -13,7 +13,6 @@ public class JoeMovement : MonoBehaviour
     private float holdDuration = 5f; // Hold player for 5 seconds
     public GameObject fpvController; // Reference to FPVController
     private MonoBehaviour playerMovementScript; // Reference to First Person Movement script
-
     void Start()
     {
         if (fpvController != null)
@@ -37,7 +36,6 @@ public class JoeMovement : MonoBehaviour
         else if (!isCaught)
         {
             // Parent the player to Joe
-            Debug.Log("LOCKED ON PLAYER");
             myPlayer.SetParent(transform);
             isCaught = true;
             holdingPlayer = true;
@@ -46,12 +44,14 @@ public class JoeMovement : MonoBehaviour
             // Disable player movement while held
             if (playerMovementScript != null)
             {
-                Debug.Log("MOVEMENT DISABLED");
                 playerMovementScript.enabled = false;
             }
 
-            // Stop Joe from rotating after catching the player
-            rb.angularVelocity = Vector3.zero;
+            // Completely freeze Joe’s rotation so he doesn’t spin
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
+
+            // Move the player to a local position (1 unit in front of Joe)
+            myPlayer.localPosition = new Vector3(0f, 1f, 0.5f);
         }
 
         // Ensure the player stays attached
@@ -63,7 +63,6 @@ public class JoeMovement : MonoBehaviour
         // Release the player after 5 seconds
         if (holdingPlayer && Time.time - catchTime >= holdDuration)
         {
-            Debug.Log("Player Released");
             // Teleport player to the defined coordinates after being unlinked
             myPlayer.position = teleportPosition;
 
@@ -77,6 +76,9 @@ public class JoeMovement : MonoBehaviour
             {
                 playerMovementScript.enabled = true;
             }
+
+            // Restore Joe’s rotation freedom after release
+            rb.constraints = RigidbodyConstraints.None;
         }
     }
 }
