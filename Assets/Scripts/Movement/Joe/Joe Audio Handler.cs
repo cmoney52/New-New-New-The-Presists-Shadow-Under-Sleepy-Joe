@@ -23,13 +23,12 @@ public class JoeAudioHandler : MonoBehaviour
     }
     IEnumerator PlaySoundWithDelay()
     {
-        while (!SunriseSimulation.IsDaytime) // Loop indefinitely
+        while (true) // Loop indefinitely
         {
             yield return new WaitForSeconds(timeBetweenSounds); // Wait specified time
 
             PlayRandomSound(); // Play a new sound
         }
     }
-
 }
 
