@@ -54,8 +54,8 @@ public class Interactable : MonoBehaviour
     {
         if (global.hasFishingRod)
         {
-            interactionText.text = "You Already Have a Fishing Rod";
-            return;
+            DisableOutline();
+            interactionText.text = " ";
         }
         else
         {
