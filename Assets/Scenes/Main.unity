@@ -23,10 +23,10 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1.69
+  m_AmbientIntensity: 0.72
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: f15c336556dd74f40aaca655f7767970, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 67950864b84c5db4f9eee7ca51c85571, type: 2}
   m_HaloStrength: 0.511
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1128,12 +1128,12 @@ MonoBehaviour:
   dayLengthModifier: 1
   sunLight: {fileID: 295885732}
   sunSphere: {fileID: 162857886}
-  daySkybox: {fileID: 2100000, guid: 20d4f77b9022eab48b4d94599ed4bf82, type: 2}
-  nightSkybox: {fileID: 2100000, guid: 2039a0ad0a9d05549928b70362f54902, type: 2}
+  daySkybox: {fileID: 2100000, guid: 9ca22510633fbfd4399f1704cd9d5c72, type: 2}
+  nightSkybox: {fileID: 2100000, guid: 1cc6e6796f833a94f94e6d794ca654c3, type: 2}
   dayFogColor: {r: 0.7490196, g: 0.8862746, b: 0.9960785, a: 1}
   nightFogColor: {r: 0.18039216, g: 0.18431373, b: 0.18823531, a: 1}
   dayFogDensity: 0.002
-  nightFogDensity: 0.015
+  nightFogDensity: 0.05
 --- !u!114 &295885731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2067,7 +2067,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: db96e04f47f6c2a44bc6bb90f93602ec, type: 2}
+  - {fileID: 2100000, guid: 8759ec410a6774b4ea13ae32dc2b8d2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2106,7 +2106,7 @@ Transform:
   m_GameObject: {fileID: 621375285}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.37532347, z: -0, w: 0.9268939}
-  m_LocalPosition: {x: 141, y: 6.3, z: 248}
+  m_LocalPosition: {x: 141, y: 5, z: 248}
   m_LocalScale: {x: 93.43171, y: 0.13434307, z: 19.846325}
   m_ConstrainProportionsScale: 0
   m_Children: []
