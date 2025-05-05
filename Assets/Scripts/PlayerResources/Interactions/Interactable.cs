@@ -87,4 +87,10 @@ public class Interactable : MonoBehaviour
         global.MineralCount = 0;
     }
 
+    public void BuyHousePart()
+    {
+
+    }
+
+
 }
