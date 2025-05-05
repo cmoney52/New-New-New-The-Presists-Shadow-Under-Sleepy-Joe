@@ -4904,7 +4904,7 @@ Transform:
   m_GameObject: {fileID: 1740529441}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 219, y: 8.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4957,7 +4957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 57.3
+      value: 417
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7081,8 +7081,48 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3240153020823829523, guid: bdad0a551bae0c24e9862d1f20266ab4, type: 3}
+      propertyPath: newMaxSpeed
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240153020823829523, guid: bdad0a551bae0c24e9862d1f20266ab4, type: 3}
       propertyPath: stopDistance
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240153020823829523, guid: bdad0a551bae0c24e9862d1f20266ab4, type: 3}
+      propertyPath: FPVController
+      value: 
+      objectReference: {fileID: 807734525}
+    - target: {fileID: 3240153020823829523, guid: bdad0a551bae0c24e9862d1f20266ab4, type: 3}
+      propertyPath: fpvController
+      value: 
+      objectReference: {fileID: 807734525}
+    - target: {fileID: 3240153020823829523, guid: bdad0a551bae0c24e9862d1f20266ab4, type: 3}
+      propertyPath: targetPosition.x
+      value: 448
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240153020823829523, guid: bdad0a551bae0c24e9862d1f20266ab4, type: 3}
+      propertyPath: targetPosition.y
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240153020823829523, guid: bdad0a551bae0c24e9862d1f20266ab4, type: 3}
+      propertyPath: targetPosition.z
+      value: 429
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240153020823829523, guid: bdad0a551bae0c24e9862d1f20266ab4, type: 3}
+      propertyPath: firstPersonCamera
+      value: 
+      objectReference: {fileID: 195830139}
+    - target: {fileID: 3240153020823829523, guid: bdad0a551bae0c24e9862d1f20266ab4, type: 3}
+      propertyPath: teleportPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240153020823829523, guid: bdad0a551bae0c24e9862d1f20266ab4, type: 3}
+      propertyPath: teleportPosition.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240153020823829523, guid: bdad0a551bae0c24e9862d1f20266ab4, type: 3}
+      propertyPath: teleportPosition.z
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3365572328231646688, guid: bdad0a551bae0c24e9862d1f20266ab4, type: 3}
       propertyPath: m_Name
