@@ -226,6 +226,7 @@ PrefabInstance:
       addedObject: {fileID: 1865391086}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58d1f9e479e207d428b1202338ad2d35, type: 3}
+--- !u!1 &153702099
 --- !u!1001 &51482898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -303,41 +304,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 81032652}
-  m_Layer: 5
-  m_Name: Rock
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &81032652
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81032651}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &153702099
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
   - component: {fileID: 153702100}
   - component: {fileID: 153702102}
   - component: {fileID: 153702101}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5763,11 +5733,6 @@ Transform:
   - {fileID: 1790193719}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1741436565 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 412350, guid: 72b76b70e594ba04693aed80a727db75, type: 3}
-  m_PrefabInstance: {fileID: 1415709709}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1763681259
 GameObject:
   m_ObjectHideFlags: 0
@@ -5904,6 +5869,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763681259}
   m_CullTransparentMesh: 1
+--- !u!4 &1741436565 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 412350, guid: 72b76b70e594ba04693aed80a727db75, type: 3}
+  m_PrefabInstance: {fileID: 1415709709}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1790193718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16818,7 +16788,6 @@ MeshCollider:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 81032652}
   - {fileID: 1009737864}
   - {fileID: 2125571297}
   - {fileID: 634097644}
