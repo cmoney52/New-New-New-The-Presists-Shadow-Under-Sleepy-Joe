@@ -11,14 +11,19 @@ public class Interactable : MonoBehaviour
     public string message;
     public Global global;
     [SerializeField] TMP_Text interactionText;
+    public Image imgFishingRod;
 
     public UnityEvent onInteraction;
+    public GameObject sleepyTimeTerminal;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         outline = GetComponent<Outline>();
         DisableOutline();
+        imgFishingRod.gameObject.SetActive(false);
+        sleepyTimeTerminal.gameObject.SetActive(false);
+
     }
     public void Interact()
     {
@@ -56,7 +61,15 @@ public class Interactable : MonoBehaviour
     {
         fishingRod.tag = "disabled";
         global.hasFishingRod = true;
-        
+        imgFishingRod.gameObject.SetActive(true);
+
+
+
+    }
+
+    public void sleepyTime ()
+    {
+        sleepyTimeTerminal.gameObject.SetActive(true);
     }
 
     public void sell()
@@ -73,5 +86,11 @@ public class Interactable : MonoBehaviour
         global.MoneyCount += global.MineralCount * global.MineralPrice;
         global.MineralCount = 0;
     }
+
+    public void BuyHousePart()
+    {
+
+    }
+
 
 }

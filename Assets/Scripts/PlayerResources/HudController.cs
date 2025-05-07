@@ -14,7 +14,11 @@ public class HudController : MonoBehaviour
     }
 
     [SerializeField] TMP_Text interactionText;
-    [SerializeField] TMP_Text counters;
+    [SerializeField] TMP_Text money;
+    [SerializeField] TMP_Text rock;
+    [SerializeField] TMP_Text log;
+    [SerializeField] TMP_Text fish;
+
 
     public void EnableInteractionText(string text)
     {
@@ -27,12 +31,9 @@ public class HudController : MonoBehaviour
     }
     void Update()
     {
-        //Updates the text on the screen that shows the amount of money and materials the player has
-        counters.text = 
-            " $" + global.ReturnString(global.MoneyCount) 
-            + "\n Wood:" + global.ReturnString(global.WoodCount) 
-            + "\n Fish:" + global.ReturnString(global.FishCount) 
-            + "\n Rock:" + global.ReturnString(global.MineralCount)
-            + "\n do you have fishing rod?:" + global.hasFishingRod;
+        money.text = global.ReturnString(global.MoneyCount);
+        fish.text = global.ReturnString(global.FishCount);
+        log.text = global.ReturnString(global.WoodCount);
+        rock.text = global.ReturnString(global.MineralCount);
     }
 }
