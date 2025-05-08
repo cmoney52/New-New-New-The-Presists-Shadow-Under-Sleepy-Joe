@@ -10,6 +10,7 @@ public class JoeMovement : MonoBehaviour
     private float catchTime = 0f;
     private bool holdingPlayer = false;
     public Vector3 teleportPosition = new Vector3(0f, 1f, 0f); // Coordinates where player teleports after being unlinked
+    public Vector3 bunkerPosition = new Vector3(420.2946f, 16.4f, 430.9027f);//Coordinates where joe will run to
     private float holdDuration = 5f; // Hold player for 5 seconds
     public GameObject fpvController; // Reference to FPVController
     private MonoBehaviour playerMovementScript; // Reference to First Person Movement script
@@ -58,6 +59,7 @@ public class JoeMovement : MonoBehaviour
         if (holdingPlayer)
         {
             myPlayer.SetParent(transform);
+            rb.linearVelocity = bunkerPosition;
         }
 
         // Release the player after 5 seconds
