@@ -19,10 +19,18 @@ public class Interactable : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        outline = GetComponent<Outline>();
-        DisableOutline();
-        imgFishingRod.gameObject.SetActive(false);
-        sleepyTimeTerminal.gameObject.SetActive(false);
+
+            outline = GetComponent<Outline>();
+            DisableOutline();
+
+        if (imgFishingRod != null)
+        {
+            imgFishingRod.gameObject.SetActive(false);
+        }
+        if (sleepyTimeTerminal != null)
+        {
+            sleepyTimeTerminal.gameObject.SetActive(false);
+        }
 
     }
     public void Interact()
