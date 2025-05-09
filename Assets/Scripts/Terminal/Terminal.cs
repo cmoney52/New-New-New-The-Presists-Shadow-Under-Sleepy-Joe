@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,7 +42,7 @@ public class Terminal : MonoBehaviour
 
     public void closeMenu()
     {
-
+        Debug.Log(" ukjhberjsdmsfudilkjhgb,mx nzcrdwethmf rmbseghrnm ,klcjkhscfgvn hrcm,ebukeryjhdngm,f.)");
         WholeUI.gameObject.SetActive(false);
     }
 }

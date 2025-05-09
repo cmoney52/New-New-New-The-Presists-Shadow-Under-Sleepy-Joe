@@ -4764,7 +4764,6 @@ GameObject:
   - component: {fileID: 735043188}
   - component: {fileID: 735043187}
   - component: {fileID: 735043189}
-  - component: {fileID: 735043190}
   m_Layer: 5
   m_Name: Sleepy Time UI
   m_TagString: Untagged
@@ -4781,7 +4780,7 @@ RectTransform:
   m_GameObject: {fileID: 735043185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.9, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1549316299}
@@ -4789,8 +4788,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14, y: -9}
-  m_SizeDelta: {x: 436.74072, y: 18}
+  m_AnchoredPosition: {x: 39.914864, y: -9}
+  m_SizeDelta: {x: 544.5703, y: 18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &735043187
 MonoBehaviour:
@@ -4805,7 +4804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.98039216}
+  m_Color: {r: 0.18238991, g: 0.18238991, b: 0.18238991, a: 0.77254903}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4846,19 +4845,6 @@ MonoBehaviour:
   close: {fileID: 1207304918}
   playerCamera: {fileID: 195830139}
   playerMovement: {fileID: 807734525}
---- !u!114 &735043190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735043185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8f2437c8006fd34dac9f981e0dce0da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  margin: 65
 --- !u!1 &746360570
 GameObject:
   m_ObjectHideFlags: 0
@@ -9733,7 +9719,7 @@ RectTransform:
   m_GameObject: {fileID: 1549316298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20.78, y: 10.39, z: 10.39}
+  m_LocalScale: {x: 4.6, y: 2.3, z: 2.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1207304917}
