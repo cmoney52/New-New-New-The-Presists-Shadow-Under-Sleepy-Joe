@@ -27,11 +27,14 @@ public class Terminal : MonoBehaviour
 
     void OnDisable()
     {
-        FirstPersonLook Look = playerCamera.GetComponent<FirstPersonLook>();
+        if(playerCamera != null)
+        {
+            FirstPersonLook Look = playerCamera.GetComponent<FirstPersonLook>();
+            Look.enabled = true;
+        }
         FirstPersonMovement Move = playerMovement.GetComponent<FirstPersonMovement>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        Look.enabled = true;
         Move.enabled = true;
     }
 
