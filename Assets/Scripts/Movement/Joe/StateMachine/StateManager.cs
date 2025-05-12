@@ -2,15 +2,24 @@ using UnityEngine;
 
 public class StateManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public State currentState;
+     void Update()
     {
-        
+        RunStateMachine();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void RunStateMachine()
     {
-        
+        State nextState = currentState?.RunCurrentState();
+
+        if (nextState != null)
+        {
+            SwitchState(nextState);
+        }
+    }
+
+    private void SwitchState(State nextState) 
+    {
+        currentState = nextState;
     }
 }
