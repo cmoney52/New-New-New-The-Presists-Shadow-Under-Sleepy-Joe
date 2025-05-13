@@ -1,49 +1,46 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(CanvasScaler))]
 public class CanvasScalerFix : MonoBehaviour
 {
     [Range(0f, 100f)]
     public float margin = 10f; // Default margin in pixels
 
+    private CanvasScaler canvasScaler;
+
     void Start()
     {
-        ScaleCanvas();
+        canvasScaler = GetComponent<CanvasScaler>();
+
+        // Set the default scaling mode to Scale With Screen Size
+        canvasScaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+
+        // Adjust the reference resolution to account for the margin
+        AdjustCanvasScaler();
     }
 
-    void UpdateMargin(float newMargin)
+    public void UpdateMargin(float newMargin)
     {
         margin = newMargin;
-        ScaleCanvas();
+        AdjustCanvasScaler();
     }
 
-    void ScaleCanvas()
+    void AdjustCanvasScaler()
     {
-        RectTransform rectTransform = GetComponent<RectTransform>();
-        if (rectTransform == null || rectTransform.parent == null) return;
+        if (canvasScaler == null) return;
 
-        RectTransform parentRectTransform = rectTransform.parent.GetComponent<RectTransform>();
-        if (parentRectTransform == null) return;
+        // Define the reference resolution (e.g., 1920x1080 by default)
+        Vector2 referenceResolution = new Vector2(1920, 1080);
 
-        // Keep default anchor and pivot (no centering)
-        rectTransform.anchorMin = Vector2.zero;
-        rectTransform.anchorMax = Vector2.one;
-        rectTransform.pivot = new Vector2(0.5f, 0.5f);
+        // Adjust for margins
+        referenceResolution.x -= 2f * margin;
+        referenceResolution.y -= 2f * margin;
 
-        // Calculate independent scales for X and Y based
-        // on pixel margins
-        float parentWidth = parentRectTransform.rect.width * 4;
-        float parentHeight = parentRectTransform.rect.height * 4;
+        // Update the CanvasScaler's reference resolution
+        canvasScaler.referenceResolution = referenceResolution;
 
-        int windowWidth = Screen.width;
-        int windowHeight = Screen.height;
-
-        float scaleX = (windowWidth/(parentWidth + 2f * margin));
-        float scaleY = (windowHeight/(parentHeight + 2f * margin));
-        float scale = Mathf.Min(scaleX, scaleY);
-
-        // Apply independent scaling to ensure equal margins
-        rectTransform.localScale = new Vector3(scale, scale, 1f);
-        rectTransform.sizeDelta = Vector2.zero; // Ensure canvas fills adjusted area
+        // Match width or height to fit the screen
+        canvasScaler.matchWidthOrHeight = 0.5f; // 0 = Width, 1 = Height, 0.5 = Balanced
     }
 }

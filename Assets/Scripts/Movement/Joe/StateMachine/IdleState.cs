@@ -1,18 +1,28 @@
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class IdleState : State
 {
     public ChaseState chaseState;
-    public bool canSeePlayer;
+    void Start()
+    {
+        if (fpvController != null)
+        {
+            playerMovementScript = fpvController.GetComponent<FirstPersonMovement>(); // Get First Person Movement script
+        }
+    }
 
     public override State RunCurrentState()
     {
+        float distanceToMe = Vector3.Distance(transform.position, myPlayer.position);
 
-        if (canSeePlayer) {
+        if (distanceToMe < 70) {
             return chaseState;
         }
         else
         {
+            Vector3 direction = (randomInt).normalized;
+            rb.linearVelocity = new Vector3(direction.x * moveSpeed, rb.linearVelocity.y, direction.z * moveSpeed);
             return this;
         }
 
