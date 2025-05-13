@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class IdleState : State
 {
+    public Vector3 randomInt = Vector3.zero;
     public ChaseState chaseState;
     void Start()
     {
