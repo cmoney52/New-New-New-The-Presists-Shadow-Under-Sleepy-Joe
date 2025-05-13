@@ -58,6 +58,14 @@ public class Terminal : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        if (playerMovement != null)
+        {
+            FirstPersonMovement Move = playerMovement.GetComponent<FirstPersonMovement>();
+            Move.enabled = true;
+        }
+            Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     private void Start()
