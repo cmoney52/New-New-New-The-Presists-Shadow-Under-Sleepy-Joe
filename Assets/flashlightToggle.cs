@@ -4,7 +4,7 @@ public class FlashlightToggle : MonoBehaviour
 {
     private Light flashlight; // Reference to the light component
     private bool isOn = true; // Track flashlight state
-    private int brightness = 1; // Default brightness (1 = dim, higher = brighter)
+    public int brightness = 20; // Default brightness (1 = dim, higher = brighter)
 
     void Start()
     {
