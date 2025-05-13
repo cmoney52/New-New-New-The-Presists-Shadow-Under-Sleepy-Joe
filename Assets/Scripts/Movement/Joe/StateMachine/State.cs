@@ -18,7 +18,7 @@ public abstract class State: MonoBehaviour
     protected float holdDuration = 5f; // Hold player for 5 seconds
     public GameObject fpvController; // Reference to FPVController
     protected MonoBehaviour playerMovementScript; // Reference to First Person Movement script
-    public Vector3 randomInt = new Vector3(Random.Range(-200, 200), 0, Random.Range(-280, 280));
+    //public Vector3 randomInt = new Vector3(Random.Range(-200, 200), 0, Random.Range(-280, 280));
 
     //declare stateRunner
     public abstract State RunCurrentState();
