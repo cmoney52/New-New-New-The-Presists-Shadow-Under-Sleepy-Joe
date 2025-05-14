@@ -31,7 +31,7 @@ public class AttackState : State
         rb.constraints = RigidbodyConstraints.FreezeRotation;
 
         // Move the player to a local position (1 unit in front of Joe)
-        myPlayer.localPosition = new Vector3(0f, 1f, 0.5f);
+        //myPlayer.localPosition = new Vector3(0f, 1f, 0.5f);
 
         // Ensure the player stays attached
         if (holdingPlayer)
