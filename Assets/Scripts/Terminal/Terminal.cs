@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class Terminal : MonoBehaviour
 {
     public GameObject WholeUI;
-    public GameObject Store;
+    public Button btnStore;
+    public GameObject StoreUI;
     public Button close;
     public GameObject playerCamera;
     public GameObject playerMovement;
@@ -74,6 +75,9 @@ public class Terminal : MonoBehaviour
         {
             close.onClick.AddListener(closeMenu);
         }
+
+            btnStore.onClick.AddListener(openStore);
+
     }
 
     public void closeMenu()
@@ -86,11 +90,12 @@ public class Terminal : MonoBehaviour
 
     public void openStore ()
     {
-        Store.gameObject.SetActive(true);
+        Debug.Log("OPENSTORE");
+        StoreUI.gameObject.SetActive(true);
     }
     public void closeStore()
     {
-        Store.gameObject.SetActive(false);
+        StoreUI.gameObject.SetActive(false);
     }
     
 }
