@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    public Vector3 randomInt = Vector3.zero;
     public ChaseState chaseState;
     void Start()
     {
@@ -12,33 +11,20 @@ public class IdleState : State
         {
             playerMovementScript = fpvController.GetComponent<FirstPersonMovement>(); // Get First Person Movement script
         }
-    }
 
-    private State OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("player"))
-        {
-            return chaseState;
-        }
-        else
-        {
-            return this;
-        }
     }
 
     public override State RunCurrentState()
     {
-        float distanceToMe = Vector3.Distance(transform.position, myPlayer.position);
-              
-        if (OnTriggerEnter(joeAgroRange) == chaseState) {
-            return chaseState;
-        }
-        else
+        Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius);
+        foreach (Collider hit in hits)
         {
-            Vector3 direction = (randomInt).normalized;
-            rb.linearVelocity = new Vector3(direction.x * moveSpeed, rb.linearVelocity.y, direction.z * moveSpeed);
-            return this;
+            if (hit.CompareTag("player"))
+            {
+                return chaseState;
+            }
         }
+        return this;
 
     }
 }
