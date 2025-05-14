@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -12,11 +13,23 @@ public class IdleState : State
         }
     }
 
+    private State OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("player"))
+        {
+            return chaseState;
+        }
+        else
+        {
+            return this;
+        }
+    }
+
     public override State RunCurrentState()
     {
         float distanceToMe = Vector3.Distance(transform.position, myPlayer.position);
-
-        if (distanceToMe < 70) {
+              
+        if (OnTriggerEnter(joeAgroRange) == chaseState) {
             return chaseState;
         }
         else
