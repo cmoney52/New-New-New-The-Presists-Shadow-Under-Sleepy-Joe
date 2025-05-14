@@ -6,7 +6,7 @@ public abstract class State: MonoBehaviour
     // Variables
    
     public Rigidbody rb;
-
+    public Collider joeAgroRange;
     public Transform myPlayer;
     public float moveSpeed = 5f;
     public float stopDistance = 1.5f;
@@ -19,6 +19,7 @@ public abstract class State: MonoBehaviour
     public GameObject fpvController; // Reference to FPVController
     protected MonoBehaviour playerMovementScript; // Reference to First Person Movement script
     //public Vector3 randomInt = new Vector3(Random.Range(-200, 200), 0, Random.Range(-280, 280));
+    public Vector3 randomInt = new Vector3(0, 0, 0);
 
     //declare stateRunner
     public abstract State RunCurrentState();
