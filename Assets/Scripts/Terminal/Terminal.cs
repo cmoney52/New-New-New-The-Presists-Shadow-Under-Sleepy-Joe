@@ -82,10 +82,9 @@ public class Terminal : MonoBehaviour
 
     public void closeMenu()
     {
-        if (WholeUI != null)
-        {
+        Debug.Log("Close Menu");
             WholeUI.gameObject.SetActive(false);
-        }
+        
     }
 
     public void openStore ()
