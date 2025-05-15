@@ -21,7 +21,6 @@ public class FlashlightToggle : MonoBehaviour
         {
             isOn = !isOn;
             flashlight.intensity = isOn ? brightness : 0; // Set brightness level or turn off
-            Debug.Log("Flashlight toggled: " + isOn + " | Brightness: " + brightness);
         }
     }
 
@@ -32,6 +31,5 @@ public class FlashlightToggle : MonoBehaviour
         {
             flashlight.intensity = brightness; // Update brightness if flashlight is on
         }
-        Debug.Log("Brightness set to: " + brightness);
     }
 }
