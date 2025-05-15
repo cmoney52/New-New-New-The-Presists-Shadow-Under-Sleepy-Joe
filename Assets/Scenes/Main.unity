@@ -10481,6 +10481,7 @@ RectTransform:
   m_Children:
   - {fileID: 2135008425}
   - {fileID: 2068003768}
+  - {fileID: 1556392320}
   m_Father: {fileID: 1009737864}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -13502,7 +13503,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 766200577}
-  - {fileID: 1556392320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -15623,7 +15623,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1157837466}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1556392321}
+        m_TargetAssemblyTypeName: Terminal, Assembly-CSharp
+        m_MethodName: openResources
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1157837466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20963,15 +20975,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556392319}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.83, y: 0.83, z: 0.83}
+  m_LocalScale: {x: 0.8299999, y: 0.8299999, z: 0.8299999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 74119945}
   - {fileID: 1547786162}
   - {fileID: 1207304917}
-  m_Father: {fileID: 1009737864}
+  m_Father: {fileID: 766200577}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -20993,6 +21005,7 @@ MonoBehaviour:
   WholeUI: {fileID: 1556392319}
   btnStore: {fileID: 1623381728}
   StoreUI: {fileID: 1547786161}
+  ResourceUI: {fileID: 1702618279}
   close: {fileID: 1207304918}
   playerCamera: {fileID: 195830139}
   playerMovement: {fileID: 807734525}
@@ -26442,7 +26455,7 @@ GameObject:
   - component: {fileID: 2006542976}
   - component: {fileID: 2006542975}
   m_Layer: 5
-  m_Name: BTNResources (1)
+  m_Name: BTNBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

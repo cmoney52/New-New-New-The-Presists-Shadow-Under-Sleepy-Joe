@@ -7,6 +7,7 @@ public class Terminal : MonoBehaviour
     public GameObject WholeUI;
     public Button btnStore;
     public GameObject StoreUI;
+    public GameObject ResourceUI;
     public Button close;
     public GameObject playerCamera;
     public GameObject playerMovement;
@@ -96,5 +97,15 @@ public class Terminal : MonoBehaviour
     {
         StoreUI.gameObject.SetActive(false);
     }
-    
+
+    public void closeResources()
+    {
+        ResourceUI.gameObject.SetActive(false);
+    }
+
+    public void openResources()
+    {
+        ResourceUI.gameObject.SetActive(true);
+    }
+
 }
