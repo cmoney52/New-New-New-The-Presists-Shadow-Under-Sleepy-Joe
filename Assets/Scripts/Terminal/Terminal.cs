@@ -75,9 +75,10 @@ public class Terminal : MonoBehaviour
         {
             close.onClick.AddListener(closeMenu);
         }
-
+        if (btnStore != null)
+        {
             btnStore.onClick.AddListener(openStore);
-
+        }   
     }
 
     public void closeMenu()
