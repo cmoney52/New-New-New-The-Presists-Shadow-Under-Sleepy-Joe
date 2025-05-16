@@ -8,6 +8,7 @@ public class Terminal : MonoBehaviour
     public Button btnStore;
     public GameObject StoreUI;
     public GameObject ResourceUI;
+    public GameObject HomeStoreUI;
     public Button close;
     public GameObject playerCamera;
     public GameObject playerMovement;
@@ -72,9 +73,15 @@ public class Terminal : MonoBehaviour
 
     private void Start()
     {
+
         if (close != null)
         {
-            close.onClick.AddListener(closeMenu);
+            Debug.Log(close);
+            //close.onClick.AddListener(closeMenu);
+            Debug.LogError("MENU CLOSED LISTENER ADDED");
+        }
+        else {
+            Debug.LogError("NO LISTENER");
         }
 
             btnStore.onClick.AddListener(openStore);
@@ -84,7 +91,7 @@ public class Terminal : MonoBehaviour
     public void closeMenu()
     {
         Debug.Log("Close Menu");
-            WholeUI.gameObject.SetActive(false);
+        WholeUI.gameObject.SetActive(false);
         
     }
 
@@ -106,6 +113,7 @@ public class Terminal : MonoBehaviour
     public void openResources()
     {
         ResourceUI.gameObject.SetActive(true);
+        HomeStoreUI.gameObject.SetActive(false);
     }
 
 }
