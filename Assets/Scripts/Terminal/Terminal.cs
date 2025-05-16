@@ -108,6 +108,7 @@ public class Terminal : MonoBehaviour
     public void closeResources()
     {
         ResourceUI.gameObject.SetActive(false);
+        HomeStoreUI.gameObject.SetActive(true);
     }
 
     public void openResources()
