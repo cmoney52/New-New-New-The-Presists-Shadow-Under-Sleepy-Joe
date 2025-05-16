@@ -74,18 +74,6 @@ public class Terminal : MonoBehaviour
     private void Start()
     {
 
-        if (close != null)
-        {
-            Debug.Log(close);
-            //close.onClick.AddListener(closeMenu);
-            Debug.LogError("MENU CLOSED LISTENER ADDED");
-        }
-        else {
-            Debug.LogError("NO LISTENER");
-        }
-
-            btnStore.onClick.AddListener(openStore);
-
     }
 
     public void closeMenu()
@@ -97,7 +85,6 @@ public class Terminal : MonoBehaviour
 
     public void openStore ()
     {
-        Debug.Log("OPENSTORE");
         StoreUI.gameObject.SetActive(true);
     }
     public void closeStore()
