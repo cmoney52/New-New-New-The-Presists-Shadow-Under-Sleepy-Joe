@@ -59,9 +59,8 @@ public class Interactable : MonoBehaviour
 
     public void getFish()
     {
-        if (global.hasFishingRod)
+        if (global.hasFishingRod && global.whatHolding == 2)
         {
-            //Play animation
             global.FishCount += 1;
         }
     }
