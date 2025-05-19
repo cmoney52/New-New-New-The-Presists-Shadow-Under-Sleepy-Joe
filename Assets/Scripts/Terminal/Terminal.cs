@@ -1,24 +1,36 @@
+//Importing Unity Extensions
 using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//Class
 public class Terminal : MonoBehaviour
 {
+    //UI info
     public GameObject WholeUI;
-    public Button btnStore;
-    public GameObject StoreUI;
     public GameObject ResourceUI;
     public GameObject HomeStoreUI;
+    public GameObject StoreUI;
+    public GameObject infoUI;
+
+   //Close Button
+    public Button btnStore;
     public Button close;
+
+    //Player info
     public GameObject playerCamera;
     public GameObject playerMovement;
 
+    //Runs when script is turned on
     void OnEnable()
     {
+        //Checking if canvas is enabled
         if (WholeUI != null && WholeUI.activeSelf)
         {
             if (playerCamera != null)
             {
+                //If the player and the canvas are active locking the mouse
                 FirstPersonLook Look = playerCamera.GetComponent<FirstPersonLook>();
                 if (Look != null)
                 {
@@ -28,6 +40,7 @@ public class Terminal : MonoBehaviour
                 }
             }
 
+            //Locking player movement
             if (playerMovement != null)
             {
                 FirstPersonMovement Move = playerMovement.GetComponent<FirstPersonMovement>();
@@ -39,8 +52,11 @@ public class Terminal : MonoBehaviour
         }
     }
 
+
+    //When disabled
     void OnDisable()
     {
+        //Setting the senstivity back to normal
         if (playerCamera != null)
         {
             FirstPersonLook Look = playerCamera.GetComponent<FirstPersonLook>();
@@ -50,6 +66,7 @@ public class Terminal : MonoBehaviour
             }
         }
 
+        //Updating player movement to normal
         if (playerMovement != null)
         {
             FirstPersonMovement Move = playerMovement.GetComponent<FirstPersonMovement>();
@@ -59,45 +76,49 @@ public class Terminal : MonoBehaviour
             }
         }
 
+        //Setting the mouse to correct size
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        if (playerMovement != null)
-        {
-            FirstPersonMovement Move = playerMovement.GetComponent<FirstPersonMovement>();
-            Move.enabled = true;
-        }
-            Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        
     }
 
-    private void Start()
-    {
-
-    }
-
+    //Closes menu when run
     public void closeMenu()
     {
-        Debug.Log("Close Menu");
-        WholeUI.gameObject.SetActive(false);
-        
+        WholeUI.gameObject.SetActive(false);   
     }
 
+    //Opens store menu
     public void openStore ()
     {
         StoreUI.gameObject.SetActive(true);
     }
+
+    //Closes store menu
     public void closeStore()
     {
         StoreUI.gameObject.SetActive(false);
     }
 
+    //Opens info tab
+    public void openInfo()
+    {
+        infoUI.gameObject.SetActive(true);
+    }
+
+    //Closes info tab
+    public void closeInfo()
+    {
+        infoUI.gameObject.SetActive(false);
+    }
+
+    //Closes resource window and re-enables Joemazon
     public void closeResources()
     {
         ResourceUI.gameObject.SetActive(false);
         HomeStoreUI.gameObject.SetActive(true);
     }
 
+    //Opens resource menu and disables Joemazon
     public void openResources()
     {
         ResourceUI.gameObject.SetActive(true);
