@@ -9,13 +9,14 @@ public class InteractionDelay : MonoBehaviour
     public FirstPersonMovement playerMovementScript;
     public float delayTime = 5;
     public GameObject playerCamera;
+    public Global global;
 
 
     private void Start()
     {
         playerMovementScript.enabled = true;
         animator.enabled = false;
-        outline.enabled = true;
+        outline.enabled = false;
         interactable.enabled = true;
     }
     IEnumerator DelayedInteraction()
@@ -30,36 +31,53 @@ public class InteractionDelay : MonoBehaviour
         outline.enabled = true;
         interactable.enabled = true;
     }
+    //Start fishing rod code
     IEnumerator DelayedInteractionFish()
     {
-        interactable.enabled = false;
-        outline.enabled = false;
-        animator.enabled = true;
-        playerMovementScript.enabled = false;
-        yield return new WaitForSeconds(3);
-        animator.enabled = false;
-        yield return new WaitForSeconds(delayTime);
-        animator.enabled = true;
-        yield return new WaitForSeconds(3);
-        playerMovementScript.enabled = true;
-        animator.enabled = false;
-        outline.enabled = true;
-        interactable.enabled = true;
-    }
+        FirstPersonLook Look = playerCamera.GetComponent<FirstPersonLook>(); //declare camera
 
-    IEnumerator lockPlayerCamera() 
-    {
-        if (playerCamera != null)
+        if (global.hasFishingRod && global.whatHolding == 2) //if you have and are holding the fishing rod
         {
-            FirstPersonLook Look = playerCamera.GetComponent<FirstPersonLook>();
-            if (Look != null)
-            { 
-                Look.sensitivity = 0;
-                yield return new WaitForSeconds(delayTime);
-                Look.sensitivity = 2;
-            }
+            //disable player movement in all capacity
+            interactable.enabled = false;
+            outline.enabled = false;
+            playerMovementScript.enabled = false;
+            Look.sensitivity = 0;
+
+            //manage the animation and timing
+            playCast();
+            returnToDefault();
+            yield return new WaitForSeconds(delayTime);
+            playReel();
+            returnToDefault();
+
+            ///enable player movement and such
+            Look.sensitivity = 2;
+            playerMovementScript.enabled = true;
+            animator.enabled = false;
+            outline.enabled = true;
+            interactable.enabled = true;
         }
     }
+    public void playCast()
+    {
+        animator.Play("Cast");
+        Debug.Log("casted");
+    }
+
+    public void playReel()
+    {
+        animator.Play("Reel");
+        Debug.Log("Reeling");
+    }
+
+    public void returnToDefault()
+    {
+        animator.Play("Default");
+        Debug.Log("Back to default");
+    }
+    //end fishing rod code
+
     public void ObjectDelay()
     {
         StartCoroutine(DelayedInteraction());
@@ -67,9 +85,5 @@ public class InteractionDelay : MonoBehaviour
     public void ObjectDelayFishingRod()
     {
         StartCoroutine(DelayedInteractionFish());
-    }
-    public void lockCamera()
-    {
-        StartCoroutine(lockPlayerCamera());
     }
 }
