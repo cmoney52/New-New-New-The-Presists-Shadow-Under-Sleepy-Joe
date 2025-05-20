@@ -14,7 +14,7 @@ public class ChaseState : State
     {
         float distanceToMe = Vector3.Distance(transform.position, myPlayer.position);
 
-        if (distanceToMe > stopDistance && !isCaught)
+        if (distanceToMe < stopDistance && !isCaught)
         {
             return attackState;
         }
