@@ -53,10 +53,8 @@ public class IdleState : State
         Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius);
         foreach (Collider hit in hits)
         {
-            Debug.Log(hit.tag);
             if (hit.CompareTag("player"))   
             {
-                Debug.Log("Switching to chase mode.");
                 return chaseState;
             }
         }

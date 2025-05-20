@@ -17,11 +17,6 @@ public class ChaseState : State
     }
 
     void setupAgent() {
-        for (int i = 0; i < 100; i++){
-            if (agent == null) {
-                Debug.Log("ChaseState no agent");
-            }
-        }
             agent = GetComponentInParent<NavMeshAgent>();
     }
     public override State RunCurrentState()
@@ -34,10 +29,8 @@ public class ChaseState : State
         {
             playerMovementScript = fpvController.GetComponent<FirstPersonMovement>(); // Get First Person Movement script
         }
-
-        Debug.Log(target.position);
         agent.SetDestination(target.position);
-
+        
         if (agent.remainingDistance < 1.5f && !agent.pathPending) {
             return attackState;
         }

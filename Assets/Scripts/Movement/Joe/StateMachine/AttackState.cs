@@ -2,66 +2,57 @@ using UnityEngine;
 
 public class AttackState : State
 {
-
     public IdleState idleState;
+    public Transform JoeBiden;
+    public Transform playerParentObject;
+    public GameObject fpvCam;
+    public float waitTime;
+    public Vector3 teleportPositionLocation; // Ensure this is assigned properly
+    private FirstPersonMovement attackPlayerMovementScript;
+    private bool isReleasingPlayer = false;
 
-    void Start()
+    private void Start()
     {
-        if (fpvController != null)
+        if (fpvCam != null)
         {
-            playerMovementScript = fpvController.GetComponent<FirstPersonMovement>(); // Get First Person Movement script
+            playerMovementScript = fpvCam.GetComponent<FirstPersonMovement>();
         }
     }
 
     public override State RunCurrentState()
     {
-        // Parent the player to Joe
-        myPlayer.SetParent(transform);
+        if (holdingPlayer || isReleasingPlayer)
+        {
+            return idleState;
+        }
+
+        // Parent the player to Joe and disable movement
+        myPlayer.SetParent(JoeBiden);
         isCaught = true;
         holdingPlayer = true;
         catchTime = Time.time;
 
-        // Disable player movement while held
-        if (playerMovementScript != null)
+        if (attackPlayerMovementScript != null)
         {
-            playerMovementScript.enabled = false;
+            attackPlayerMovementScript.enabled = false;
         }
 
-        // Completely freeze Joe’s rotation so he doesn’t spin
         rb.constraints = RigidbodyConstraints.FreezeRotation;
+        myPlayer.localPosition = new Vector3(0f, 1f, 0.5f);
 
-        // Move the player to a local position (1 unit in front of Joe)
-        //myPlayer.localPosition = new Vector3(0f, 1f, 0.5f);
-
-        // Ensure the player stays attached
         if (holdingPlayer)
         {
-            myPlayer.SetParent(transform);
-            rb.linearVelocity = bunkerPosition;
+            //
+
+            // Start releasing the player using PlayerHoldScripts
+            PlayerHoldScript.Instance.StartReleasePlayerCoroutine(
+                myPlayer, playerParentObject, waitTime, attackPlayerMovementScript, rb, teleportPosition,
+                () => { isReleasingPlayer = false; } // Reset flag after coroutine finishes
+            );
+
+            return idleState;
         }
 
-        // Release the player after 5 seconds
-        if (holdingPlayer && Time.time - catchTime >= holdDuration)
-        {
-            // Teleport player to the defined coordinates after being unlinked
-            myPlayer.position = teleportPosition;
-
-            // Unlink the player from Joe
-            myPlayer.SetParent(null);
-            holdingPlayer = false;
-            isCaught = false;
-
-            // Re-enable player movement after release
-            if (playerMovementScript != null)
-            {
-                playerMovementScript.enabled = true;
-            }
-
-            // Restore Joe’s rotation freedom after release
-            rb.constraints = RigidbodyConstraints.None;
-        }
-
-        Debug.Log("I have attacked");
-        return idleState;
+        return this;
     }
 }
