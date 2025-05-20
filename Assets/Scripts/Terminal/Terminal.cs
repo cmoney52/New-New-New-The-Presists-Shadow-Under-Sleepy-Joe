@@ -22,9 +22,20 @@ public class Terminal : MonoBehaviour
     public GameObject playerCamera;
     public GameObject playerMovement;
 
+    //audio 
+    public AudioSource audioSource;
+
+    public AudioClip OpenSound;
+    public AudioClip CloseSound;
+
+
+
     //Runs when script is turned on
     void OnEnable()
     {
+
+        audioSource.PlayOneShot(OpenSound);
+
         //Checking if canvas is enabled
         if (WholeUI != null && WholeUI.activeSelf)
         {
@@ -56,6 +67,7 @@ public class Terminal : MonoBehaviour
     //When disabled
     void OnDisable()
     {
+
         //Setting the senstivity back to normal
         if (playerCamera != null)
         {
@@ -63,6 +75,7 @@ public class Terminal : MonoBehaviour
             if (Look != null)
             {
                 Look.sensitivity = 2;
+
             }
         }
 
@@ -84,7 +97,9 @@ public class Terminal : MonoBehaviour
     //Closes menu when run
     public void closeMenu()
     {
-        WholeUI.gameObject.SetActive(false);   
+        audioSource.PlayOneShot(CloseSound);
+        WholeUI.gameObject.SetActive(false);
+
     }
 
     //Opens store menu
@@ -123,6 +138,11 @@ public class Terminal : MonoBehaviour
     {
         ResourceUI.gameObject.SetActive(true);
         HomeStoreUI.gameObject.SetActive(false);
+    }
+
+    public void Update()
+    {
+
     }
 
 }
