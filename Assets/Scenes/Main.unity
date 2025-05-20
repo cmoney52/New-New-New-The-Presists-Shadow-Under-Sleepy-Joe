@@ -6052,7 +6052,7 @@ MonoBehaviour:
   bunkerPosition: {x: 420.2946, y: 16.4, z: 430.9027}
   fpvController: {fileID: 0}
   randomInt: {x: 0, y: 0, z: 0}
-  detectionRadius: 3
+  detectionRadius: 70
   chaseState: {fileID: 485303008}
   agent: {fileID: 2080721006}
   WaypointFolder: {fileID: 1871027336}
@@ -7482,6 +7482,7 @@ MonoBehaviour:
   randomInt: {x: 0, y: 0, z: 0}
   detectionRadius: 3
   attackState: {fileID: 415112543}
+  target: {fileID: 1790193719}
 --- !u!4 &485303009
 Transform:
   m_ObjectHideFlags: 0
@@ -29587,15 +29588,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -88.4
+      value: 152
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.32
+      value: 16.07
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 56.7
+      value: 412
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalRotation.w
@@ -29631,7 +29632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5241267463746980526, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_Name
-      value: FPV Contoller
+      value: player
       objectReference: {fileID: 0}
     - target: {fileID: 5241267463746980526, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_Layer
@@ -34434,7 +34435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6892768fd9081464692f70319de44e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 0}
+  currentState: {fileID: 393950533}
 --- !u!195 &2080721006
 NavMeshAgent:
   m_ObjectHideFlags: 0

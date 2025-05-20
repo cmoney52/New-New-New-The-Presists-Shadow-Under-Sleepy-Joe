@@ -23,7 +23,12 @@ public class IdleState : State
 
     void OnEnable()
     {
-        while (GetComponentInParent<NavMeshAgent>() == null) { }
+        while (GetComponentInParent<NavMeshAgent>() == null) {
+            Debug.Log("Not found yet");
+        }
+        if (!agent.enabled) {
+            agent.enabled = true;
+        }
         agent = GetComponentInParent<NavMeshAgent>();
         waypoints = new Transform[WaypointFolder.childCount];
         for (int i = 0; i < WaypointFolder.childCount; i++)
@@ -34,28 +39,24 @@ public class IdleState : State
 
     void Update()
     {
-        if (!agent.pathPending && agent.remainingDistance < 1.5F)
-        {
-            currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
-            agent.SetDestination(waypoints[currentWaypoint].position);
-        }
+            if (!agent.pathPending && agent.remainingDistance < 1.5F)
+            {
+                currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
+                agent.SetDestination(waypoints[currentWaypoint].position);
+            }
     }
 
-    private void OnDisable()
-    {
-        if (agent != null && agent.hasPath)
-        {
-            agent.ResetPath();
-        }
-    }
 
     public override State RunCurrentState()
     {
+        Debug.Log("In Idle strat");
         Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius);
         foreach (Collider hit in hits)
         {
-            if (hit.CompareTag("player"))
+            Debug.Log(hit.tag);
+            if (hit.CompareTag("player"))   
             {
+                Debug.Log("Switching to chase mode.");
                 return chaseState;
             }
         }
