@@ -46,20 +46,25 @@ public class IdleState : State
             }
     }
 
-
+    //State machine method
     public override State RunCurrentState()
     {
-        Debug.Log("In Idle strat");
+        //Getting all of the colliders inside the detection radius
         Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius);
+
+        //Looping through all of the objects
         foreach (Collider hit in hits)
         {
+            //If the player is found switching to chase state
             if (hit.CompareTag("player"))   
             {
+                //Switching to chase state
                 return chaseState;
             }
         }
-        return this;
 
+        //Staying in the idle state
+        return this;
     }
 }
 
