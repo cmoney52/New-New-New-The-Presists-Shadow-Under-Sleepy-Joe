@@ -13,6 +13,7 @@ public class Terminal : MonoBehaviour
     public GameObject HomeStoreUI;
     public GameObject StoreUI;
     public GameObject infoUI;
+    public GameObject HouseUI;
 
    //Close Button
     public Button btnStore;
@@ -140,6 +141,16 @@ public class Terminal : MonoBehaviour
         HomeStoreUI.gameObject.SetActive(false);
     }
 
+    public void openHouse()
+    {
+        HomeStoreUI.gameObject.SetActive(false);
+        HouseUI.gameObject.SetActive(true);
+    }
+    
+    public void closeHouse() {
+        HomeStoreUI.gameObject.SetActive(true);
+        HouseUI.gameObject.SetActive(false);
+    }
     public void Update()
     {
 
