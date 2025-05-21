@@ -4744,7 +4744,7 @@ MonoBehaviour:
   JoeBiden: {fileID: 964487108}
   playerParentObject: {fileID: 1740529442}
   fpvCam: {fileID: 807734525}
-  waitTime: 5
+  waitTime: 1
   teleportPositionLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &434280680
 GameObject:
@@ -5252,7 +5252,6 @@ MonoBehaviour:
   detectionRadius: 3
   attackState: {fileID: 415112543}
   target: {fileID: 1790193719}
-  idleState: {fileID: 393950533}
 --- !u!4 &485303009
 Transform:
   m_ObjectHideFlags: 0
@@ -10762,7 +10761,7 @@ Transform:
   m_GameObject: {fileID: 968419286}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.27, y: -0.050001144, z: 4.19}
+  m_LocalPosition: {x: 0.27, y: -0.05, z: 4.19}
   m_LocalScale: {x: 10.961001, y: 8.1459, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16175,8 +16174,20 @@ Transform:
   m_LocalPosition: {x: -2.0649567, y: 0.042741776, z: -16.78379}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
+  m_Children:
+  - {fileID: 1887826799}
+  - {fileID: 1330412865}
+  - {fileID: 524900816}
+  - {fileID: 2097883481}
+  - {fileID: 1107284263}
+  - {fileID: 2051359237}
+  - {fileID: 1041991546}
+  - {fileID: 1204777210}
+  - {fileID: 1856677240}
+  - {fileID: 727578871}
+  - {fileID: 494705212}
+  - {fileID: 1521380432}
+  m_Father: {fileID: 574946913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1415709709
 PrefabInstance:
@@ -23619,10 +23630,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
-  m_Acceleration: 14
+  m_Speed: 3.5
+  m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 60
+  m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -35797,7 +35808,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -3.9216075, y: 0.28617048, z: -4.6598005}
-  m_LocalScale: {x: 68.81072, y: 964.06586, z: 372.6109}
+  m_LocalScale: {x: 22.936907, y: 964.06586, z: 372.6109}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6363565300518445536}
@@ -47844,8 +47855,8 @@ Transform:
   m_GameObject: {fileID: 3893665061164247796}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 3.939136, y: 0.28617048, z: -4.6597953}
-  m_LocalScale: {x: 68.81072, y: 964.06586, z: 372.6109}
+  m_LocalPosition: {x: 3.9390752, y: 0.28617048, z: -4.6598005}
+  m_LocalScale: {x: 22.936907, y: 964.06586, z: 372.6109}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6363565300518445536}
@@ -56565,4 +56576,3 @@ SceneRoots:
   - {fileID: 1871027336}
   - {fileID: 479414766}
   - {fileID: 4504974018037317013}
-  - {fileID: 1415599568}
