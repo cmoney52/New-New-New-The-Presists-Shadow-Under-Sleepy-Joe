@@ -5,6 +5,7 @@ public class FlashlightToggle : MonoBehaviour
     private Light flashlight; // Reference to the light component
     private bool isOn = true; // Track flashlight state
     public int brightness = 20; // Default brightness (1 = dim, higher = brighter)
+    public Global global;
 
     void Start()
     {
@@ -19,8 +20,11 @@ public class FlashlightToggle : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F)) // Toggle flashlight
         {
-            isOn = !isOn;
-            flashlight.intensity = isOn ? brightness : 0; // Set brightness level or turn off
+            if (global.whatHolding == 1)
+            {
+                isOn = !isOn;
+                flashlight.intensity = isOn ? brightness : 0; // Set brightness level or turn off
+            }
         }
     }
 

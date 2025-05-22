@@ -11,6 +11,7 @@ public class Global : MonoBehaviour
     public float FishPrice = 2f;
     public float MineralPrice = 3f;
     public bool hasFishingRod = false;
+    public float whatHolding = 0f; //0 nothing, 1 flashlight, 2 fishing rod
 
     public string ReturnString(float converting)
     {
