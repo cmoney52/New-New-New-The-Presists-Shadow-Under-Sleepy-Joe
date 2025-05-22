@@ -1,5 +1,6 @@
 //Importing Unity Extensions
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,10 +19,15 @@ public class Terminal : MonoBehaviour
    //Close Button
     public Button btnStore;
     public Button close;
+    public Global global;
 
     //Player info
     public GameObject playerCamera;
     public GameObject playerMovement;
+
+    public Transform House;
+    public float initHouseUpgradeCost = 10f;
+    private float curUpgradeCost;
 
     //audio 
     public AudioSource audioSource;
@@ -151,9 +157,33 @@ public class Terminal : MonoBehaviour
         HomeStoreUI.gameObject.SetActive(true);
         HouseUI.gameObject.SetActive(false);
     }
-    public void Update()
+    public void upgradeHouse()
     {
+        if (curUpgradeCost == 0)
+        {
+            curUpgradeCost = initHouseUpgradeCost;
+        }
+        Debug.Log(global.MoneyCount + " " + curUpgradeCost);
+        if (global.MoneyCount >= curUpgradeCost)
+        {
+            global.MoneyCount = global.MoneyCount - curUpgradeCost;
 
+            int numParts = House.gameObject.transform.childCount;
+            Debug.Log(numParts);
+            GameObject curPart;
+            for (int i = 0; i < numParts; i++)
+            {
+                Debug.Log(i);
+                if (!House.GetChild(i).gameObject.activeInHierarchy)
+                {
+                    Debug.Log("Attempting to enable");
+                    curPart = House.GetChild(i).gameObject;
+                    curPart.SetActive(true);
+                    return;
+                }
+            }
+            curUpgradeCost = curUpgradeCost * 1.5f;
+        }
     }
 
 }
