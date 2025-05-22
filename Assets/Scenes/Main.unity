@@ -6868,7 +6868,7 @@ MonoBehaviour:
   rb: {fileID: 1002771064}
   joeAgroRange: {fileID: 0}
   myPlayer: {fileID: 1790193719}
-  moveSpeed: 5
+  moveSpeed: 10
   stopDistance: 1.5
   teleportPosition: {x: 0, y: 1, z: 0}
   bunkerPosition: {x: 420.2946, y: 16.4, z: 430.9027}
@@ -6887,7 +6887,7 @@ Transform:
   m_GameObject: {fileID: 393950532}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.29944754, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11459,7 +11459,7 @@ Transform:
   m_GameObject: {fileID: 672316416}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.68, y: -9.096, z: 0}
+  m_LocalPosition: {x: 41.100014, y: -8.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14421,10 +14421,10 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: ac832e6c766485e4c85fee0b93720d6f, type: 2}
-  m_TreeDistance: 140
+  m_TreeDistance: 500
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
+  m_TreeMaximumFullLODCount: 10000
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
@@ -16123,7 +16123,7 @@ Transform:
   m_GameObject: {fileID: 968419286}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.27, y: -0.05, z: 4.19}
+  m_LocalPosition: {x: 0.27, y: 0.6000004, z: 4.19}
   m_LocalScale: {x: 10.961001, y: 8.1459, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30022,15 +30022,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 141
+      value: -91.86011
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.3
+      value: 6.7355385
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 388.4
+      value: 53.657654
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalRotation.w
@@ -34779,10 +34779,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 10
+  m_Acceleration: 20
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 300
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
