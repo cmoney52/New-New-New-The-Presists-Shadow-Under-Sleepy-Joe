@@ -22,6 +22,7 @@ public class Global : MonoBehaviour
         hasFishingRod = false;
     }
 
+
     // Update is called once per frame
     void Update()
     {
