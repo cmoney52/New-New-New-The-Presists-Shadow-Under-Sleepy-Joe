@@ -41,6 +41,7 @@ public class IdleState : State
     {
             if (!agent.pathPending && agent.remainingDistance < 1.5F)
             {
+            Debug.Log("Waypoint attempting to update");
                 currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
                 agent.SetDestination(waypoints[currentWaypoint].position);
             }
