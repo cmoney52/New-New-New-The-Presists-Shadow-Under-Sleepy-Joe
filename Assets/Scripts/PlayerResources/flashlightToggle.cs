@@ -20,7 +20,9 @@ public class FlashlightToggle : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F)) // Toggle flashlight
         {
-            if (global.whatHolding == 1)
+            int whatHolding = global.whatHolding;
+
+            if (whatHolding == 1)
             {
                 isOn = !isOn;
                 flashlight.intensity = isOn ? brightness : 0; // Set brightness level or turn off
