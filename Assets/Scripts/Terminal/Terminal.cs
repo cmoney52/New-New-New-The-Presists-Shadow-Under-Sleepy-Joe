@@ -159,24 +159,38 @@ public class Terminal : MonoBehaviour
     }
     public void upgradeHouse()
     {
-        if (curUpgradeCost == 0)
+        int numParts = House.gameObject.transform.childCount;
+        bool levelsRemain = false;
+        if (!global.houseFinished)
         {
-            curUpgradeCost = initHouseUpgradeCost;
+            if (curUpgradeCost == 0)
+            {
+                curUpgradeCost = initHouseUpgradeCost;
+            }
+            for (int i = 0; i < numParts; i++)
+            {
+                if (!House.GetChild(i).gameObject.activeInHierarchy)
+                {
+                    levelsRemain = true;
+                }
+            }
+            if (!levelsRemain)
+            {
+                global.houseFinished = true;
+                return;
+            }
         }
-        Debug.Log(global.MoneyCount + " " + curUpgradeCost);
+
         if (global.MoneyCount >= curUpgradeCost)
         {
             global.MoneyCount = global.MoneyCount - curUpgradeCost;
 
-            int numParts = House.gameObject.transform.childCount;
-            Debug.Log(numParts);
+            
             GameObject curPart;
             for (int i = 0; i < numParts; i++)
             {
-                Debug.Log(i);
                 if (!House.GetChild(i).gameObject.activeInHierarchy)
                 {
-                    Debug.Log("Attempting to enable");
                     curPart = House.GetChild(i).gameObject;
                     curPart.SetActive(true);
                     return;
@@ -185,5 +199,4 @@ public class Terminal : MonoBehaviour
             curUpgradeCost = curUpgradeCost * 1.5f;
         }
     }
-
 }

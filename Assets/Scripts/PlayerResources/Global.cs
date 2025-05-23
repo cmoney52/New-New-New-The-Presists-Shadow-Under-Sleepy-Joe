@@ -11,7 +11,7 @@ public class Global : MonoBehaviour
     public float FishPrice = 2f;
     public float MineralPrice = 3f;
     public bool hasFishingRod = false;
-
+    public bool houseFinished = false;
     public string ReturnString(float converting)
     {
         return (converting.ToString());
