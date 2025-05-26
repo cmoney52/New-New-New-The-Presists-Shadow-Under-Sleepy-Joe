@@ -50,7 +50,7 @@ public class IdleState : State
 
     public override State RunCurrentState()
     {
-        Debug.Log("In Idle strat");
+        
         Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius);
         foreach (Collider hit in hits)
         {
