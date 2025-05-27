@@ -13,6 +13,7 @@ public class Global : MonoBehaviour
     public bool hasFishingRod = false;
     public bool houseFinished = false;
     public int whatHolding = 0;
+    public float joeBidenMultiplier = 1f;
     public string ReturnString(float converting)
     {
         return (converting.ToString());

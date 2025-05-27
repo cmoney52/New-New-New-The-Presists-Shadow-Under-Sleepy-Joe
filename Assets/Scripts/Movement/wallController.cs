@@ -5,11 +5,11 @@ public class WallController : MonoBehaviour
     private Vector3 initialPosition;
     private bool isDropping = false;
     public float dropSpeed = 2f;
-    public float dropDistance = 5f; // Adjust how far the wall should drop
+    public float dropDistance = 8f; // Adjust how far the wall should drop
 
     void Start()
     {
-        initialPosition = transform.position;
+        initialPosition = transform.parent.position;
     }
 
     void Update()
@@ -25,21 +25,24 @@ public class WallController : MonoBehaviour
             ResetWall();
         }
     }
-
     System.Collections.IEnumerator DropWall()
     {
         float targetY = initialPosition.y - dropDistance;
 
-        while (transform.position.y > targetY)
+        while (transform.parent.position.y > targetY)
         {
-            transform.position -= new Vector3(0, dropSpeed * Time.deltaTime, 0);
+            Debug.Log("Trying to move");
+            transform.parent.position -= new Vector3(0, dropSpeed * Time.deltaTime, 0);
             yield return null;
         }
     }
 
     void ResetWall()
     {
-        transform.position = initialPosition;
+        transform.parent.position = initialPosition;
     }
+
+
 }
+
 
