@@ -7,6 +7,7 @@ public class onInteract : MonoBehaviour
     public GameObject imgJoeninium2;
     public GameObject imgJoeninium3;
     public Material auraMaterial;
+    public Terminal terminal;   
 
 
 
@@ -30,6 +31,7 @@ public class onInteract : MonoBehaviour
 
     public void Interact(GameObject interactedObject)
     {
+        if (!terminal.levelsRemain) { 
         Destroy(interactedObject);
         joeOutline.gameObject.SetActive(true);
         joeLevel++;
@@ -52,5 +54,6 @@ public class onInteract : MonoBehaviour
 
         }
 
+        }
     }
 }
