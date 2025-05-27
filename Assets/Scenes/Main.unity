@@ -13004,6 +13004,7 @@ MonoBehaviour:
   imgJoeninium2: {fileID: 1672531420}
   imgJoeninium3: {fileID: 718007595}
   auraMaterial: {fileID: 2100000, guid: f0dccd7c0718e1b44b997dfdc1881b72, type: 2}
+  terminal: {fileID: 1556392321}
   joeOutline: {fileID: 1490866741}
   joeLevel: 0
 --- !u!1 &634097643
@@ -17355,7 +17356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c050056433fcbf346beab004a0e29533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoneyCount: 0
+  MoneyCount: 10000
   WoodCount: 0
   FishCount: 0
   MineralCount: 0
@@ -30737,6 +30738,8 @@ MonoBehaviour:
   audioSource: {fileID: 1767777690}
   OpenSound: {fileID: 8300000, guid: 19c5ef9df07f205438404f3f01b89ca4, type: 3}
   CloseSound: {fileID: 8300000, guid: 0592daf60e2ef6a4a996ad994f46f2b4, type: 3}
+  levelsRemain: 0
+  HouseCostUog: {fileID: 1374383134}
 --- !u!114 &1556392322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35297,8 +35300,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -284.6, y: 203.1}
-  m_SizeDelta: {x: 200, y: 58.2}
+  m_AnchoredPosition: {x: -192.3, y: 203.1}
+  m_SizeDelta: {x: 593.29, y: 58.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1809142468
 MonoBehaviour:

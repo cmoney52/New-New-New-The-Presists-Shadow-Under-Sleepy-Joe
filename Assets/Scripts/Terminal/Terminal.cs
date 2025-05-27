@@ -3,6 +3,8 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using static UnityEngine.Rendering.DebugUI;
 
 
 //Class
@@ -16,9 +18,9 @@ public class Terminal : MonoBehaviour
     public GameObject infoUI;
     public GameObject HouseUI;
 
-   //Close Button
-    public Button btnStore;
-    public Button close;
+    //Close Button
+    public UnityEngine.UI.Button btnStore;
+    public UnityEngine.UI.Button close;
     public Global global;
 
     //Player info
@@ -34,6 +36,10 @@ public class Terminal : MonoBehaviour
 
     public AudioClip OpenSound;
     public AudioClip CloseSound;
+
+    public bool levelsRemain;
+    public TextMeshProUGUI HouseCostUog; 
+
 
 
 
@@ -159,6 +165,7 @@ public class Terminal : MonoBehaviour
     }
     public void upgradeHouse()
     {
+
         int numParts = House.gameObject.transform.childCount;
         bool levelsRemain = false;
         if (!global.houseFinished)
@@ -183,6 +190,8 @@ public class Terminal : MonoBehaviour
 
         if (global.MoneyCount >= curUpgradeCost)
         {
+            curUpgradeCost = (float)Math.Round(curUpgradeCost, 0);
+            HouseCostUog.text = "$" + curUpgradeCost.ToString();
             global.MoneyCount = global.MoneyCount - curUpgradeCost;
 
             
@@ -196,7 +205,8 @@ public class Terminal : MonoBehaviour
                     return;
                 }
             }
-            curUpgradeCost = curUpgradeCost * 1.5f;
+            curUpgradeCost = (curUpgradeCost * 1.5f);
+            
         }
     }
 }
