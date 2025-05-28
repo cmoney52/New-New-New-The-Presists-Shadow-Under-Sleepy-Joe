@@ -2964,11 +2964,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 160cc8458bf775f40b5ddfb4003210bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5471554
+      value: 10.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 160cc8458bf775f40b5ddfb4003210bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -122.3
+      value: -252.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 160cc8458bf775f40b5ddfb4003210bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4371,11 +4371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 160cc8458bf775f40b5ddfb4003210bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5471554
+      value: 10.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 160cc8458bf775f40b5ddfb4003210bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -118
+      value: 174.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 160cc8458bf775f40b5ddfb4003210bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7953,11 +7953,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 160cc8458bf775f40b5ddfb4003210bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 101
+      value: 354.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 160cc8458bf775f40b5ddfb4003210bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5471554
+      value: 9.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 160cc8458bf775f40b5ddfb4003210bd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17368,7 +17368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c050056433fcbf346beab004a0e29533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoneyCount: 10000
+  MoneyCount: 0
   WoodCount: 0
   FishCount: 0
   MineralCount: 0
@@ -35097,15 +35097,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 161.1
+      value: -98.1
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.28
+      value: 6.23
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 426.74
+      value: 67.1
       objectReference: {fileID: 0}
     - target: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalRotation.w
