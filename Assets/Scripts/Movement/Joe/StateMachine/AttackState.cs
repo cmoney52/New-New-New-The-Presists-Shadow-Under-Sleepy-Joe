@@ -10,17 +10,10 @@ public class AttackState : State
     public Vector3 teleportPositionLocation; // Ensure this is assigned properly
     private FirstPersonMovement attackPlayerMovementScript;
     private bool isReleasingPlayer = false;
-<<<<<<< HEAD
-<<<<<<< HEAD
     public Transform dungeonButtons;
     public Transform[] buttonsFolder;
     private Interactable interactScript;
     public Global global;
-=======
->>>>>>> parent of 79ef37c (Bababooey)
-=======
->>>>>>> parent of 79ef37c (Bababooey)
-
     private void Start()
     {
         if (fpvCam != null)

@@ -12,7 +12,6 @@ public class Interactable : MonoBehaviour
     public Global global;
     [SerializeField] TMP_Text interactionText;
     public Image imgFishingRod;
-    public GameObject dungeonDoor;
 
     public UnityEvent onInteraction;
     public GameObject sleepyTimeTerminal;
@@ -68,10 +67,12 @@ public class Interactable : MonoBehaviour
     }
     public void getFishingRod()
     {
-        Debug.Log("Got Rod");
+        fishingRod.tag = "disabled";
         global.hasFishingRod = true;
         imgFishingRod.gameObject.SetActive(true);
-        fishingRod.tag = "disabled";
+
+
+
     }
 
     public void sleepyTime ()
@@ -99,9 +100,5 @@ public class Interactable : MonoBehaviour
 
     }
 
-    public void secretButton()
-    {
-        dungeonDoor.gameObject.SetActive(false);
-    }
 
 }

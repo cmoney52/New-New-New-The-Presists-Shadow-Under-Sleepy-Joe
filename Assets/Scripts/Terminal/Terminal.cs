@@ -37,7 +37,7 @@ public class Terminal : MonoBehaviour
     public AudioClip OpenSound;
     public AudioClip CloseSound;
 
-    public bool levelsRemain;
+    public bool levelsRemain = true;
     public TextMeshProUGUI HouseCostUog; 
 
 

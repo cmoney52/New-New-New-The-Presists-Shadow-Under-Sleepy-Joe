@@ -8885,7 +8885,7 @@ MonoBehaviour:
   myPlayer: {fileID: 1790193719}
   moveSpeed: 5
   stopDistance: 1.5
-  teleportPosition: {x: 633, y: 62, z: 309}
+  teleportPosition: {x: 633, y: 54, z: 309}
   bunkerPosition: {x: 420.2946, y: 16.4, z: 430.9027}
   fpvController: {fileID: 0}
   randomInt: {x: 0, y: 0, z: 0}
@@ -8896,6 +8896,8 @@ MonoBehaviour:
   fpvCam: {fileID: 807734525}
   waitTime: 1
   teleportPositionLocation: {x: 0, y: 0, z: 0}
+  dungeonButtons: {fileID: 0}
+  buttonsFolder: []
   global: {fileID: 909023060}
 --- !u!1 &418881430 stripped
 GameObject:
