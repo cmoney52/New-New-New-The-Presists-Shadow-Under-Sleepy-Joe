@@ -45,7 +45,36 @@ public class AttackState : State
 
         if (holdingPlayer)
         {
-            //
+            buttonsFolder = new Transform[dungeonButtons.childCount];
+            for (int i = 0; i < dungeonButtons.childCount; i++)
+            {
+                buttonsFolder[i] = dungeonButtons.GetChild(i);
+            }
+            int randomInt = Random.Range(1, dungeonButtons.childCount);
+
+            for (int i = 0; i < dungeonButtons.childCount; i++)
+            {
+                DisableScript(buttonsFolder[i]);
+            }
+            EnableScript(buttonsFolder[randomInt]);
+
+            void EnableScript(Transform obj)
+            {
+                Interactable script = obj.GetComponent<Interactable>();
+                if (script != null)
+                {
+                    script.enabled = true;
+                }
+            }
+
+            void DisableScript(Transform obj)
+            {
+                Interactable script = obj.GetComponent<Interactable>();
+                if (script != null)
+                {
+                    script.enabled = false;
+                }
+            }
 
             // Start releasing the player using PlayerHoldScripts
             PlayerHoldScript.Instance.StartReleasePlayerCoroutine(
