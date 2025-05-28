@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 using BlockadeLabsSDK;
+using System.Numerics;
 
 public class Interactable : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class Interactable : MonoBehaviour
     public Global global;
     [SerializeField] TMP_Text interactionText;
     public Image imgFishingRod;
-
+    public Transform player;
+    public GameObject bunkerLockedDoor;
     public UnityEvent onInteraction;
     public GameObject sleepyTimeTerminal;
 
@@ -100,5 +102,15 @@ public class Interactable : MonoBehaviour
 
     }
 
+    public void secretbutton()
+    {
+        bunkerLockedDoor.SetActive(false);
+    }
+
+    public void Escape()
+    {
+      //  player.localPosition = new Vector3(0f, 1f, 0.5f);
+        bunkerLockedDoor.SetActive(true);
+    }
 
 }

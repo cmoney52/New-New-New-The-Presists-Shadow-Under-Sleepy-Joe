@@ -58,6 +58,7 @@ public class AttackState : State
             }
             EnableScript(buttonsFolder[randomInt]);
 
+            //used to enable the script of the given Object
             void EnableScript(Transform obj)
             {
                 Interactable script = obj.GetComponent<Interactable>();
@@ -66,7 +67,7 @@ public class AttackState : State
                     script.enabled = true;
                 }
             }
-
+            //used to disable the script of the given Object
             void DisableScript(Transform obj)
             {
                 Interactable script = obj.GetComponent<Interactable>();
