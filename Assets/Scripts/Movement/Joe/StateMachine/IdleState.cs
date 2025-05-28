@@ -37,19 +37,21 @@ public class IdleState : State
         }
     }
 
-    void Update()
+    private void updateAgent()
     {
-            if (!agent.pathPending && agent.remainingDistance < 1.5F)
-            {
-            Debug.Log("Waypoint attempting to update");
-                currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
-                agent.SetDestination(waypoints[currentWaypoint].position);
-            }
+
+        if (!agent.hasPath || agent.remainingDistance < 1.5F)
+        {
+            currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
+            agent.SetDestination(waypoints[currentWaypoint].position);
+        }
     }
+
 
 
     public override State RunCurrentState()
     {
+        updateAgent();
         
         Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius);
         foreach (Collider hit in hits)

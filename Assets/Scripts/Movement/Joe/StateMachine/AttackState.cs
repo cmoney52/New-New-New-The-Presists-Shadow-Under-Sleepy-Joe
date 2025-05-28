@@ -13,6 +13,7 @@ public class AttackState : State
     public Transform dungeonButtons;
     public Transform[] buttonsFolder;
     private Interactable interactScript;
+    public Global global;
 
     private void Start()
     {
