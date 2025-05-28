@@ -17,16 +17,19 @@ public class InteractionDelay : MonoBehaviour
         playerMovementScript.enabled = true;
         outline.enabled = false;
         interactable.enabled = true;
+        animator.enabled = false;
     }
     IEnumerator DelayedInteraction()
     {
         interactable.enabled = false;
         outline.enabled = false;
         playerMovementScript.enabled = false;
+        animator.enabled = true;
         yield return new WaitForSeconds(delayTime);
         playerMovementScript.enabled = true;
         outline.enabled = true;
         interactable.enabled = true;
+        animator.enabled = false;
     }
     IEnumerator DelayedInteractionNoAnim()
     {
