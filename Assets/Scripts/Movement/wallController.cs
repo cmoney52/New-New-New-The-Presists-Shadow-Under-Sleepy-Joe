@@ -9,7 +9,7 @@ public class WallController : MonoBehaviour
 
     void Start()
     {
-        initialPosition = transform.parent.position;
+        initialPosition = transform.position;
     }
 
     void Update()
@@ -29,17 +29,17 @@ public class WallController : MonoBehaviour
     {
         float targetY = initialPosition.y - dropDistance;
 
-        while (transform.parent.position.y > targetY)
+        while (transform.position.y > targetY)
         {
             Debug.Log("Trying to move");
-            transform.parent.position -= new Vector3(0, dropSpeed * Time.deltaTime, 0);
+            transform.position -= new Vector3(0, dropSpeed * Time.deltaTime, 0);
             yield return null;
         }
     }
 
     void ResetWall()
     {
-        transform.parent.position = initialPosition;
+        transform.position = initialPosition;
     }
 
 
