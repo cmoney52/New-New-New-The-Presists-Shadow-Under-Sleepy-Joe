@@ -22,6 +22,7 @@ public class AttackState : State
 
     public override State RunCurrentState()
     {
+
         if (holdingPlayer || isReleasingPlayer)
         {
             return idleState;
