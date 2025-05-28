@@ -13,7 +13,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] TMP_Text interactionText;
     public Image imgFishingRod;
     public GameObject dungeonDoor;
-    public Transform player;
+
     public UnityEvent onInteraction;
     public GameObject sleepyTimeTerminal;
 
@@ -102,12 +102,6 @@ public class Interactable : MonoBehaviour
     public void secretButton()
     {
         dungeonDoor.gameObject.SetActive(false);
-    }
-
-    public void escapeDoor()
-    {
-        player.localPosition = new Vector3(100f, 100f, 30f); ;
-        dungeonDoor.gameObject.SetActive(true);
     }
 
 }
