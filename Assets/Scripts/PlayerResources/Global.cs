@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Global : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class Global : MonoBehaviour
     void Update()
     {
         lifeCountTXT.text = lifeCount.ToString();
+        death();
     }
 
      public void updateLifeCount ()
@@ -41,6 +43,15 @@ public class Global : MonoBehaviour
     public int getLifeCount()
     {
         return lifeCount;
+    }
+
+    public void death()
+    {
+        if (lifeCount == 0)
+        {
+            Debug.Log("You Died");
+            SceneManager.LoadScene("Loser");
+        }
     }
 
 

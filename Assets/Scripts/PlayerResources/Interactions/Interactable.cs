@@ -109,8 +109,7 @@ public class Interactable : MonoBehaviour
 
     public void Escape()
     {
-      //  player.localPosition = new Vector3(0f, 1f, 0.5f);
+        player.position = new UnityEngine.Vector3(77.954f, 40f, -80.396f);
         bunkerLockedDoor.SetActive(true);
     }
-
 }
