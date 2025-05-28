@@ -1,8 +1,8 @@
 using UnityEngine;
+using TMPro;
 
 public class Global : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float MoneyCount = 0f;
     public float WoodCount = 0f;
     public float FishCount = 0f;
@@ -14,6 +14,9 @@ public class Global : MonoBehaviour
     public bool houseFinished = false;
     public int whatHolding = 0;
     public float joeBidenMultiplier = 1f;
+    public int lifeCount = 3;
+
+    public TextMeshProUGUI lifeCountTXT;
     public string ReturnString(float converting)
     {
         return (converting.ToString());
@@ -28,6 +31,17 @@ public class Global : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        lifeCountTXT.text = lifeCount.ToString();
     }
+
+     public void updateLifeCount ()
+    {
+        lifeCount--;
+    }
+    public int getLifeCount()
+    {
+        return lifeCount;
+    }
+
+
 }

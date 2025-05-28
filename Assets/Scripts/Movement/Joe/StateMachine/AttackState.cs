@@ -10,6 +10,7 @@ public class AttackState : State
     public Vector3 teleportPositionLocation; // Ensure this is assigned properly
     private FirstPersonMovement attackPlayerMovementScript;
     private bool isReleasingPlayer = false;
+    public Global global;
 
     private void Start()
     {
