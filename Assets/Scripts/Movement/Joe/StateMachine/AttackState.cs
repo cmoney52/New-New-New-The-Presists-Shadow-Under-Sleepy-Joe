@@ -11,10 +11,13 @@ public class AttackState : State
     private FirstPersonMovement attackPlayerMovementScript;
     private bool isReleasingPlayer = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
     public Transform dungeonButtons;
     public Transform[] buttonsFolder;
     private Interactable interactScript;
     public Global global;
+=======
+>>>>>>> parent of 79ef37c (Bababooey)
 =======
 >>>>>>> parent of 79ef37c (Bababooey)
 
