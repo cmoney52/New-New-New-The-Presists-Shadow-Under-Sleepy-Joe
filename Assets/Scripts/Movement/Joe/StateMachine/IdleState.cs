@@ -51,19 +51,23 @@ public class IdleState : State
 
     public override State RunCurrentState()
     {
-        updateAgent();
-        
-        Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius);
-        foreach (Collider hit in hits)
-        {
-            if (hit.CompareTag("player"))   
+        if (!SunriseSimulation.IsDaytime) {
+            updateAgent();
+
+            Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius);
+            foreach (Collider hit in hits)
             {
-                return chaseState;
+                if (hit.CompareTag("player"))
+                {
+                    return chaseState;
+                }
             }
+            return this;
+
         }
         return this;
-
     }
+    
 }
 
 

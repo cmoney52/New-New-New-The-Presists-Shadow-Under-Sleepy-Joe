@@ -5,9 +5,17 @@ public class StateManager : MonoBehaviour
 {
     public State currentState;
     public GameObject stateObjects;
+    public 
      void Update()
     {
-        RunStateMachine();
+        if (!SunriseSimulation.IsDaytime)
+        {
+            RunStateMachine();
+        }
+        else {
+            transform.position = new Vector3(445,14,430);
+        }
+        
     }
 
     private void RunStateMachine()
