@@ -15,7 +15,6 @@ public class InteractionDelay : MonoBehaviour
     private void Start()
     {
         playerMovementScript.enabled = true;
-        animator.enabled = false;
         outline.enabled = false;
         interactable.enabled = true;
     }
@@ -23,11 +22,9 @@ public class InteractionDelay : MonoBehaviour
     {
         interactable.enabled = false;
         outline.enabled = false;
-        animator.enabled = true;
         playerMovementScript.enabled = false;
         yield return new WaitForSeconds(delayTime);
         playerMovementScript.enabled = true;
-        animator.enabled = false;
         outline.enabled = true;
         interactable.enabled = true;
     }
