@@ -45,7 +45,8 @@ public class AttackState : State
 
         if (holdingPlayer)
         {
-            //
+            //Takes away a life
+            global.updateLifeCount();
 
             // Start releasing the player using PlayerHoldScripts
             PlayerHoldScript.Instance.StartReleasePlayerCoroutine(
